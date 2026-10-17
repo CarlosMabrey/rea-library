@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>REA Library</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header class="shell-header">
+ <div class="menubar"><div class="menus"><span class="steam-mark">◉</span><button data-menu="Library">REA</button><button data-menu="View">View</button><button data-view="connections">Connections</button><button data-view="workflows">Workflows</button><button data-view="developer">Developer</button></div><div class="account"><button id="connection-badge" data-view="connections">● Connecting</button><button id="account">▣ &nbsp; Developer ▾</button><span class="window-dots"><i></i><i></i><i></i></span></div></div>
+ <div class="navigation"><button class="history" id="back" aria-label="Back">←</button><button class="history" id="forward" aria-label="Forward">→</button><nav><button data-view="discover">DISCOVER</button><button data-view="home" class="active">LIBRARY</button><button data-view="workflows">WORKFLOWS</button><button data-view="github">GITHUB</button></nav></div>
+</header>
+<div class="workspace">
+ <aside class="sidebar"><div class="library-nav"><button class="home active" data-view="home"><span>⌂</span> HOME</button><button class="collections-icon" data-view="collections" aria-label="Collections">▦</button></div><div class="filter-bar"><button id="game-filter">APPS <small>▾</small></button><button id="installed" title="Show ready apps" aria-label="Show ready apps">◉</button><button id="favorite-filter" title="Show favorites" aria-label="Show favorites">☆</button></div><div class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Search your apps" aria-label="Search library"><button id="clear-search" aria-label="Clear search">×</button></div><button class="category" id="collapse">⌄ &nbsp; ALL APPS <span id="game-count"></span></button><div id="game-list"></div><div class="sidebar-bottom"><span>▦</span> Your work, all in one place</div></aside>
+ <main id="content" tabindex="-1"></main>
+</div>
+<footer><button id="add-game">⊕ &nbsp; ADD AN APP</button><button id="downloads"><span class="download-symbol">↓</span><span>WORKFLOWS<small id="download-status">No active workflows</small></span></button><button id="friends" data-view="connections">REA & CODEX &nbsp; <span>⌘</span></button></footer>
+<div id="popover" hidden></div><div id="toast" role="status"></div><dialog id="modal"></dialog>
+<script src="site-config.js"></script><script src="app.js"></script>
+</body></html>

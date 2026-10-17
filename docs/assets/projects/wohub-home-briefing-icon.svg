@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="title">
+  <title id="title">Hardman Signs</title>
+  <defs>
+    <linearGradient id="h" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".48" stop-color="#eef2f7"/>
+      <stop offset="1" stop-color="#b7c0ce"/>
+    </linearGradient>
+    <linearGradient id="upper" x1=".05" y1=".75" x2=".92" y2=".18">
+      <stop offset="0" stop-color="#d91f32"/>
+      <stop offset=".34" stop-color="#ef3340"/>
+      <stop offset=".68" stop-color="#ef7837"/>
+      <stop offset=".84" stop-color="#ef9a3c"/>
+      <stop offset="1" stop-color="#ef3340"/>
+    </linearGradient>
+    <linearGradient id="lower" x1=".02" y1=".55" x2=".94" y2=".35">
+      <stop offset="0" stop-color="#ef3340"/>
+      <stop offset=".42" stop-color="#ef6e38"/>
+      <stop offset=".68" stop-color="#ef9238"/>
+      <stop offset="1" stop-color="#df2638"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="13" stdDeviation="12" flood-color="#02050c" flood-opacity=".42"/>
+    </filter>
+  </defs>
+  <path fill="#01030a" opacity=".55" transform="translate(0 7)" d="M112 66H267V102H231V259H370V102H333V66H488V102H452V498H488V534H333V498H370V333H231V498H267V534H112V498H149V102H112Z"/>
+  <path d="M144 253C218 259 321 260 409 250L407 289C311 305 215 304 143 293Z" fill="url(#upper)" opacity=".78"/>
+  <path fill="url(#h)" stroke="#fff" stroke-opacity=".12" d="M112 66H267V102H231V259H370V102H333V66H488V102H452V498H488V534H333V498H370V333H231V498H267V534H112V498H149V102H112Z"/>
+  <g filter="url(#shadow)">
+    <path d="M78 211C166 132 300 99 433 110C469 113 500 120 524 134C394 128 283 149 197 199C145 230 118 261 127 300C131 319 141 337 157 352C101 332 76 292 78 211Z" fill="url(#upper)"/>
+    <path d="M444 240C488 249 516 286 516 324C516 377 461 421 388 452C280 498 157 505 45 467L22 452C161 446 281 413 384 354C428 329 458 302 462 273C464 260 458 249 444 240Z" fill="url(#lower)"/>
+  </g>
+</svg>
