@@ -1,5 +1,5 @@
 """Publish an allowlisted library catalog; local credentials and captures stay local."""
-import fcntl, hashlib, json, os, re, shutil, subprocess
+import fcntl, hashlib, ipaddress, json, os, re, shutil, subprocess
 from pathlib import Path
 from urllib.parse import urlparse
 import registry
@@ -18,6 +18,11 @@ def public_text(value,default,limit=400):
     if any(x in value for x in ('/Users/','/home/','sk-proj-','ghp_','github_pat_')):return default
     return value[:limit] or default
 
+def public_host(host):
+    if not host or '.' not in host or host.lower().endswith(('.local','.localhost','.internal','.lan')):return False
+    try:return ipaddress.ip_address(host).is_global
+    except ValueError:return host.lower()!='localhost'
+
 def catalog(items,previous,copy_asset):
     prior={x['id']:x for x in previous};result=[]
     for item in items:
@@ -29,7 +34,7 @@ def catalog(items,previous,copy_asset):
         row.update(name=name,status='ready',launchType='companion',evidence=[],url='',description=public_text(publication.get('description',old.get('description')),'A registered '+item['kind']+' in REA Library. Open the local companion to launch or rebuild it.'))
         launch=publication.get('url',old.get('url',''))
         p=urlparse(launch)
-        if p.scheme=='https' and p.netloc and not p.username and not p.password and not p.query and not p.fragment and p.hostname not in ('localhost','127.0.0.1'):
+        if p.scheme=='https' and p.netloc and not p.username and not p.password and not p.query and not p.fragment and public_host(p.hostname):
             row['url']=launch
         row['icon']=copy_asset(item['icon']) if item.get('iconPublicSafe') is True and item.get('icon') else ''
         shots=item.get('publicScreenshots',[])
