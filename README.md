@@ -33,3 +33,6 @@ Pages is static. Native launching, registration, authenticated private GitHub sy
 ## Verification
 
 The companion includes registry validation, origin/token checks, bounded GitHub sync with sanitized metadata, and sandboxed project previews. Native provider availability remains separate from a live REA handshake. Run tests with `python3 -m unittest discover -s tests` when tests are present.
+
+
+Registrations now queue an agent to capture real icons and screenshots and publish reviewed artwork automatically. The companion must be running. See WORKFLOW.md for automation configuration, privacy, status, and retries. The ChatGPT-hosted REA Library follows the same Pages catalog.

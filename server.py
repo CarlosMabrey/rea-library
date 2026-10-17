@@ -6,6 +6,7 @@ from urllib.parse import urlparse,unquote
 from http.server import ThreadingHTTPServer,BaseHTTPRequestHandler
 from registry import ROOT,DATA,prepare,atomic,apps,register,consume_inbox,now
 import github_bridge
+import pipeline
 SKILL=Path.home()/'.agents/skills/reverse-engineer-anything/SKILL.md'
 TOKEN=secrets.token_urlsafe(32)
 JOBS={};PROCESSES={};LOCK=threading.RLock();RUN_LOCK=threading.Lock()
@@ -116,7 +117,7 @@ def run_job(j):
             if outcome.get('outcome')!='ready':update_job(j,status='needs_attention',summary=outcome.get('summary','Rebuild is incomplete.'));return
             manifest_path=Path(outcome['manifest_path']).resolve()
             if not manifest_path.is_relative_to(root.resolve()):raise ValueError('Completion manifest must be inside the job workspace.')
-            m=json.loads(manifest_path.read_text());m.update(source='rea',jobId=j['id'])
+            m=json.loads(manifest_path.read_text());m.update(source='rea',jobId=j['id'],revision=j['id'])
             if not m.get('evidence') or not any(str(x).startswith('ev_') for x in m['evidence']):raise ValueError('REA completion requires evidence references.')
             if m.get('path') and not Path(m['path']).resolve().is_relative_to(root.resolve()):raise ValueError('Built project must be inside the job workspace.')
             item=register(m);update_job(j,status='ready',appId=item['id'],summary=outcome['summary']);event(j,'Verified manifest registered in your library.','success')
@@ -132,7 +133,8 @@ def create_job(m):
     with LOCK:JOBS[j['id']]=j;save_job(j)
     threading.Thread(target=run_job,args=(j,),daemon=True).start();return j
 
-def bootstrap():
+def bootstrap(base_url="http://127.0.0.1:8765"):
+    pipeline.start(base_url)
     prepare()
     for p in (DATA/'jobs').glob('*/job.json'):
         try:
@@ -162,6 +164,7 @@ class Handler(BaseHTTPRequestHandler):
         path=unquote(urlparse(self.path).path)
         if path=='/api/session':return self.json({'token':TOKEN})
         if path=='/api/health':return self.json(HEALTH)
+        if path=='/api/automation':return self.json(pipeline.status())
         if path=='/api/github':
             origin=self.headers.get('Origin')
             if origin and origin not in [f'http://127.0.0.1:{self.server.server_port}',f'http://localhost:{self.server.server_port}']:return self.json({'error':'Invalid origin'},403)
@@ -192,6 +195,7 @@ class Handler(BaseHTTPRequestHandler):
             n=int(self.headers.get('Content-Length',0))
             if n>65536:return self.json({'error':'Request too large'},413)
             m=json.loads(self.rfile.read(n) or b'{}');path=urlparse(self.path).path
+            if path=='/api/automation/retry':return self.json(pipeline.retry(str(m.get('appId',''))),202)
             if path=='/api/github/sync':return self.json(github_bridge.sync())
             if path=='/api/apps':return self.json(register(m),201)
             if path.startswith('/api/apps/') and path.endswith('/launch'):
@@ -228,13 +232,14 @@ class Handler(BaseHTTPRequestHandler):
         except (ValueError,FileNotFoundError) as e:self.json({'error':str(e)},400)
         except Exception as e:self.json({'error':str(e)},500)
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--port',type=int,default=8765);args=parser.parse_args();bootstrap()
+    parser=argparse.ArgumentParser();parser.add_argument('--port',type=int,default=8765);args=parser.parse_args();bootstrap(f"http://127.0.0.1:{args.port}")
     http=ThreadingHTTPServer(('127.0.0.1',args.port),Handler)
     print(f'REA Library: http://127.0.0.1:{args.port}',flush=True)
     try:http.serve_forever()
     except KeyboardInterrupt:pass
     finally:
         STOP.set()
+        pipeline.stop()
         for ident,p in list(PROCESSES.items()):
             update_job(JOBS[ident],status='needs_attention',summary='Library server stopped.')
             try:os.killpg(p.pid,signal.SIGTERM)

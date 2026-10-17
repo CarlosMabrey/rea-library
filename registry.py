@@ -69,20 +69,26 @@ def normalize(m):
     launchType='url' if url else 'native' if path and Path(path).suffix=='.app' and Path(path).is_dir() else 'web'
     screenshots=m.get('screenshots',[])
     if not isinstance(screenshots,list) or len(screenshots)>12:raise ValueError('Use up to 12 screenshot assets.')
-    artwork=dict(icon=artwork_asset(m.get('icon','')),screenshots=[artwork_asset(x) for x in screenshots],cover=artwork_asset(m.get('cover','')),artworkProvenance=str(m.get('artworkProvenance',''))[:2000],artworkPublicSafe=m.get('artworkPublicSafe') is True)
-    return dict(**artwork,launchType=launchType,id=ident,name=title,description=str(m.get('description',''))[:4000],kind=kind,source=source,path=path,url=url,entry=entry,status='ready',evidence=evidence[:50],updatedAt=now(),createdAt=now(),jobId=str(m.get('jobId',''))[:90])
-def register(m):
+    public_screenshots=m.get('publicScreenshots',[])
+    if not isinstance(public_screenshots,list) or len(public_screenshots)>12:raise ValueError('Use up to 12 public screenshot assets.')
+    artwork=dict(icon=artwork_asset(m.get('icon','')),screenshots=[artwork_asset(x) for x in screenshots],cover=artwork_asset(m.get('cover','')),artworkProvenance=str(m.get('artworkProvenance',''))[:2000],artworkPublicSafe=m.get('artworkPublicSafe') is True,iconPublicSafe=m.get('iconPublicSafe') is True,publicScreenshots=[artwork_asset(x) for x in public_screenshots],publication=m.get('publication',{}) if isinstance(m.get('publication',{}),dict) else {})
+    return dict(**artwork,revision=str(m.get('revision',''))[:200],launchType=launchType,id=ident,name=title,description=str(m.get('description',''))[:4000],kind=kind,source=source,path=path,url=url,entry=entry,status='ready',evidence=evidence[:50],updatedAt=now(),createdAt=now(),jobId=str(m.get('jobId',''))[:90])
+def register(m, enqueue=True):
     item=normalize(m)
     def update(d):
         previous=next((x for x in d['apps'] if x['id']==item['id']),None)
         if previous:
             item['createdAt']=previous.get('createdAt',now())
-            for key in ['icon','screenshots','cover','artworkProvenance','artworkPublicSafe','jobId']:
+            for key in ['icon','screenshots','cover','artworkProvenance','artworkPublicSafe','iconPublicSafe','publicScreenshots','publication','jobId']:
                 if key not in m:item[key]=previous.get(key,item.get(key))
             d['apps'].remove(previous)
         d['apps'].append(item)
         return item
-    return registry_edit(update)
+    result=registry_edit(update)
+    if enqueue:
+        import pipeline
+        pipeline.enqueue(result,forceCapture=bool(result.get("url") and not result.get("path") and not result.get("revision")))
+    return result
 def consume_inbox():
     prepare();results=[]
     for p in (DATA/'inbox').glob('*.json'):
