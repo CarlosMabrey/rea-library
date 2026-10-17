@@ -1,5 +1,7 @@
 # REA Library
 
+[Open the live library](https://carlosmabrey.github.io/rea-library/)
+
 A Steam-inspired home for reconstructed apps, reusable components, and developer projects.
 
 - Real app icons and screenshot galleries in the local library.
