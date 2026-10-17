@@ -1,160 +1,160 @@
 [
   {
-    "id": "rea-library",
-    "name": "REA Library",
-    "kind": "app",
-    "source": "rea",
-    "status": "ready",
-    "createdAt": "2026-10-17T07:29:32.113366+00:00",
-    "updatedAt": "2026-10-17T08:07:36.981786+00:00",
-    "description": "A personal software library for REA rebuilds and developer projects. Browse online; use the local companion for native apps and Codex workflows.",
-    "launchType": "companion",
-    "url": "",
-    "evidence": [],
-    "icon": "assets/projects/rea-library-icon.png",
-    "screenshots": [
-      "assets/projects/rea-library-preview.png"
-    ],
-    "cover": "assets/projects/rea-library-preview.png",
-    "artworkPublicSafe": true,
-    "artworkProvenance": "Visually inspected: standard library chrome, app titles, counts, and generic hero text only; no local paths, repo names, account names, or private workspace content."
-  },
-  {
     "id": "connection-card-reference-3b58fdaa",
-    "name": "Connection Card Reference",
     "kind": "component",
     "source": "custom",
-    "status": "ready",
     "createdAt": "2026-10-17T07:31:17.630258+00:00",
-    "updatedAt": "2026-10-17T08:07:36.983442+00:00",
+    "updatedAt": "2026-10-17T08:24:52.301238+00:00",
+    "name": "Connection Card Reference",
+    "status": "ready",
+    "launchType": "companion",
+    "evidence": [],
+    "url": "",
     "description": "A small connection-card reference component with a local demonstration action.",
-    "launchType": "companion",
-    "url": "",
-    "evidence": [],
-    "icon": "assets/projects/connection-card-reference-3b58fdaa-icon.png",
+    "icon": "assets/projects/published/bbca34ed9870350e83dfb5cb.png",
     "screenshots": [
-      "assets/projects/connection-card-reference-3b58fdaa-preview.png"
+      "assets/projects/published/b9338aa5428dc8c62ea4a658.png"
     ],
-    "cover": "assets/projects/connection-card-reference-3b58fdaa-preview.png",
+    "cover": "assets/projects/published/b9338aa5428dc8c62ea4a658.png",
     "artworkPublicSafe": true,
-    "artworkProvenance": "Actual screenshot of a self-contained reference demo."
-  },
-  {
-    "id": "rea-connection-card-7926dbd5",
-    "name": "REA Connection Card",
-    "kind": "component",
-    "source": "rea",
-    "status": "ready",
-    "createdAt": "2026-10-17T07:33:28.393581+00:00",
-    "updatedAt": "2026-10-17T08:07:36.984442+00:00",
-    "description": "A verified, responsive connection-card reconstruction made through REA and Codex. The connection check is a labeled local demo.",
-    "launchType": "companion",
-    "url": "",
-    "evidence": [],
-    "icon": "assets/projects/rea-connection-card-7926dbd5-icon.png",
-    "screenshots": [
-      "assets/projects/rea-connection-card-7926dbd5-preview.png"
-    ],
-    "cover": "assets/projects/rea-connection-card-7926dbd5-preview.png",
-    "artworkPublicSafe": true,
-    "artworkProvenance": "Actual screenshot of a self-contained reference demo."
-  },
-  {
-    "id": "wohub-ui-kit",
-    "name": "WOHUB UI Kit",
-    "kind": "component",
-    "source": "custom",
-    "status": "ready",
-    "createdAt": "2026-10-17T07:46:34.256563+00:00",
-    "updatedAt": "2026-10-17T08:07:36.985310+00:00",
-    "description": "A developer component catalog with foundations and composition patterns. The full reference preview remains in the local library.",
-    "launchType": "companion",
-    "url": "",
-    "evidence": [],
-    "icon": "assets/projects/wohub-ui-kit-icon.png",
-    "screenshots": [
-      "assets/projects/wohub-ui-kit-preview.png"
-    ],
-    "cover": "assets/projects/wohub-ui-kit-preview.png",
-    "artworkPublicSafe": true,
-    "artworkProvenance": "Visually inspected: first viewport shows generic button variants/sizes/states, component documentation, and specimen labels only; no customers or work records."
-  },
-  {
-    "id": "vitals-clone",
-    "name": "VitalsClone",
-    "kind": "app",
-    "source": "rea",
-    "status": "ready",
-    "createdAt": "2026-10-17T07:46:34.263207+00:00",
-    "updatedAt": "2026-10-17T08:07:36.986179+00:00",
-    "description": "A macOS menu-bar activity monitor rebuilt from Vitals. Opens through the local companion.",
-    "launchType": "companion",
-    "url": "",
-    "evidence": [],
-    "icon": "assets/projects/vitals-clone-icon.png",
-    "screenshots": [
-      "assets/projects/vitals-clone-public-preview.png"
-    ],
-    "cover": "assets/projects/vitals-clone-public-preview.png",
-    "artworkPublicSafe": true,
-    "artworkProvenance": "Cropped actual native screenshot to top 505 pixels: application chrome plus CPU activity graph and hardware label only. Excludes all running process names, project details, busiest app, and per-process statistics. Full original screenshot remains publicSafe:false."
-  },
-  {
-    "id": "wohub-home-briefing",
-    "name": "WOHUB Home Briefing Preview",
-    "kind": "component",
-    "source": "custom",
-    "status": "ready",
-    "createdAt": "2026-10-17T07:46:34.271487+00:00",
-    "updatedAt": "2026-10-17T08:07:36.987039+00:00",
-    "description": "A standalone home-briefing layout proposal. The review-only screenshot and captured sample data remain local.",
-    "launchType": "companion",
-    "url": "",
-    "evidence": [],
-    "icon": "assets/projects/wohub-home-briefing-icon.svg",
-    "screenshots": [],
-    "cover": "",
-    "artworkPublicSafe": false,
-    "artworkProvenance": "Private screenshot available in the local companion."
+    "artworkProvenance": "Actual app preview reviewed for publication by the capture workflow."
   },
   {
     "id": "folio-notion-workspace",
-    "name": "Folio",
     "kind": "app",
     "source": "rea",
-    "status": "ready",
     "createdAt": "2026-10-17T07:46:34.277269+00:00",
-    "updatedAt": "2026-10-17T08:07:36.987780+00:00",
-    "description": "A Notion-inspired personal workspace with cloud storage and collaborative editing. Existing private sign-in requirements apply.",
+    "updatedAt": "2026-10-17T08:23:06.940635+00:00",
+    "name": "Folio",
+    "status": "ready",
     "launchType": "companion",
-    "url": "https://folio-notion-workspace-carlos-20261017.carlosofearth.chatgpt.site/",
     "evidence": [],
-    "icon": "assets/projects/folio-notion-workspace-icon.svg",
+    "url": "https://folio-notion-workspace-carlos-20261017.carlosofearth.chatgpt.site/",
+    "description": "A Notion-inspired personal workspace with cloud storage and collaborative editing. Existing private sign-in requirements apply.",
+    "icon": "assets/projects/published/e6d2e59b7b5bbb0342e0fb49.svg",
     "screenshots": [
-      "assets/projects/folio-notion-workspace-public-preview.png"
+      "assets/projects/published/6bb7bfe0d8aad3676ec1bef0.png"
     ],
-    "cover": "assets/projects/folio-notion-workspace-public-preview.png",
+    "cover": "assets/projects/published/6bb7bfe0d8aad3676ec1bef0.png",
     "artworkPublicSafe": true,
-    "artworkProvenance": "Older existing folio-preview.png visually inspected: generic default Workspace template copy, Projects/Notes/Reading list links, and no identity, personal notes, sharing metadata, or cloud account data. Copied unchanged. Original live private workspace screenshot remains publicSafe:false."
+    "artworkProvenance": "Actual app preview reviewed for publication by the capture workflow."
+  },
+  {
+    "id": "rea-connection-card-7926dbd5",
+    "kind": "component",
+    "source": "rea",
+    "createdAt": "2026-10-17T07:33:28.393581+00:00",
+    "updatedAt": "2026-10-17T08:23:06.936961+00:00",
+    "name": "REA Connection Card",
+    "status": "ready",
+    "launchType": "companion",
+    "evidence": [],
+    "url": "",
+    "description": "A verified, responsive connection-card reconstruction made through REA and Codex. The connection check is a labeled local demo.",
+    "icon": "assets/projects/published/2ba759189cebf6d20bd1aa1d.png",
+    "screenshots": [
+      "assets/projects/published/1f929259ce8f6feba5256ee0.png"
+    ],
+    "cover": "assets/projects/published/1f929259ce8f6feba5256ee0.png",
+    "artworkPublicSafe": true,
+    "artworkProvenance": "Actual app preview reviewed for publication by the capture workflow."
+  },
+  {
+    "id": "rea-library",
+    "kind": "app",
+    "source": "rea",
+    "createdAt": "2026-10-17T07:29:32.113366+00:00",
+    "updatedAt": "2026-10-17T08:23:06.934672+00:00",
+    "name": "REA Library",
+    "status": "ready",
+    "launchType": "companion",
+    "evidence": [],
+    "url": "",
+    "description": "A personal software library for REA rebuilds and developer projects. Browse online; use the local companion for native apps and Codex workflows.",
+    "icon": "assets/projects/published/70aca9a6fdab7f5e1b358e85.png",
+    "screenshots": [
+      "assets/projects/published/f166d841c9d8ce0d3ee17a4c.png"
+    ],
+    "cover": "assets/projects/published/f166d841c9d8ce0d3ee17a4c.png",
+    "artworkPublicSafe": true,
+    "artworkProvenance": "Actual app preview reviewed for publication by the capture workflow."
+  },
+  {
+    "id": "vitals-clone",
+    "kind": "app",
+    "source": "rea",
+    "createdAt": "2026-10-17T07:46:34.263207+00:00",
+    "updatedAt": "2026-10-17T08:23:06.938756+00:00",
+    "name": "VitalsClone",
+    "status": "ready",
+    "launchType": "companion",
+    "evidence": [],
+    "url": "",
+    "description": "A macOS menu-bar activity monitor rebuilt from Vitals. Opens through the local companion.",
+    "icon": "assets/projects/published/5c8ff4854308ef2b0a6e03b8.png",
+    "screenshots": [
+      "assets/projects/published/92bbea77fbd59c7e1ff5de8a.png"
+    ],
+    "cover": "assets/projects/published/92bbea77fbd59c7e1ff5de8a.png",
+    "artworkPublicSafe": true,
+    "artworkProvenance": "Actual app preview reviewed for publication by the capture workflow."
+  },
+  {
+    "id": "wohub-home-briefing",
+    "kind": "component",
+    "source": "custom",
+    "createdAt": "2026-10-17T07:46:34.271487+00:00",
+    "updatedAt": "2026-10-17T08:23:06.939705+00:00",
+    "name": "WOHUB Home Briefing Preview",
+    "status": "ready",
+    "launchType": "companion",
+    "evidence": [],
+    "url": "",
+    "description": "A standalone home-briefing layout proposal. The review-only screenshot and captured sample data remain local.",
+    "icon": "assets/projects/published/03d4b3c16ebeea5239bafef6.svg",
+    "screenshots": [],
+    "cover": "",
+    "artworkPublicSafe": false,
+    "artworkProvenance": "Private screenshots remain in the local companion."
   },
   {
     "id": "wohub-interaction-reference",
-    "name": "WOHUB Interaction Reference",
     "kind": "component",
     "source": "custom",
-    "status": "ready",
     "createdAt": "2026-10-17T07:46:34.281535+00:00",
-    "updatedAt": "2026-10-17T08:07:36.988593+00:00",
-    "description": "An interactive developer reference for menus, pickers, filters, and save recovery. The full preview remains local.",
+    "updatedAt": "2026-10-17T08:23:06.941687+00:00",
+    "name": "WOHUB Interaction Reference",
+    "status": "ready",
     "launchType": "companion",
-    "url": "",
     "evidence": [],
-    "icon": "assets/projects/wohub-interaction-reference-icon.png",
+    "url": "",
+    "description": "An interactive developer reference for menus, pickers, filters, and save recovery. The full preview remains local.",
+    "icon": "assets/projects/published/c4358c02d1158e63c1e15026.png",
     "screenshots": [
-      "assets/projects/wohub-interaction-reference-preview.png"
+      "assets/projects/published/6d4643c296532af20688056e.png"
     ],
-    "cover": "assets/projects/wohub-interaction-reference-preview.png",
+    "cover": "assets/projects/published/6d4643c296532af20688056e.png",
     "artworkPublicSafe": true,
-    "artworkProvenance": "Visually inspected: page explicitly labels its sample work order synthetic and its interactions simulated; visible labels contain no customer/account data."
+    "artworkProvenance": "Actual app preview reviewed for publication by the capture workflow."
+  },
+  {
+    "id": "wohub-ui-kit",
+    "kind": "component",
+    "source": "custom",
+    "createdAt": "2026-10-17T07:46:34.256563+00:00",
+    "updatedAt": "2026-10-17T08:23:06.937862+00:00",
+    "name": "WOHUB UI Kit",
+    "status": "ready",
+    "launchType": "companion",
+    "evidence": [],
+    "url": "",
+    "description": "A developer component catalog with foundations and composition patterns. The full reference preview remains in the local library.",
+    "icon": "assets/projects/published/c4358c02d1158e63c1e15026.png",
+    "screenshots": [
+      "assets/projects/published/1cba8a0c4f9898e94521af78.png"
+    ],
+    "cover": "assets/projects/published/1cba8a0c4f9898e94521af78.png",
+    "artworkPublicSafe": true,
+    "artworkProvenance": "Actual app preview reviewed for publication by the capture workflow."
   }
 ]
