@@ -4,18 +4,18 @@
     "kind": "component",
     "source": "custom",
     "createdAt": "2026-10-17T07:31:17.630258+00:00",
-    "updatedAt": "2026-10-17T08:24:52.301238+00:00",
+    "updatedAt": "2026-10-17T08:27:22.379453+00:00",
     "name": "Connection Card Reference",
     "status": "ready",
     "launchType": "companion",
     "evidence": [],
     "url": "",
     "description": "A small connection-card reference component with a local demonstration action.",
-    "icon": "assets/projects/published/bbca34ed9870350e83dfb5cb.png",
+    "icon": "assets/projects/published/e40e32ab63c9cd07f87848ff.png",
     "screenshots": [
-      "assets/projects/published/b9338aa5428dc8c62ea4a658.png"
+      "assets/projects/published/900e2d632199482e6cc042a4.png"
     ],
-    "cover": "assets/projects/published/b9338aa5428dc8c62ea4a658.png",
+    "cover": "assets/projects/published/900e2d632199482e6cc042a4.png",
     "artworkPublicSafe": true,
     "artworkProvenance": "Actual app preview reviewed for publication by the capture workflow."
   },
